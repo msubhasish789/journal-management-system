@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,300;1,500;1,700&display=swap');
+
+:root{
+    --seaGreen: #00ffbf;
+    --orgHover :rgba(0, 255, 149, 0.151);
+    --blueBTN: #63ea75 ;
+}
+
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    outline: none; border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+
+}
+
+::selection{
+    background: var(--seaGreen);
+    color: white;
+}
+
+html{
+    font-size: 62.5%;
+    overflow: auto;
+    scroll-padding-top: 6rem;
+    scroll-behavior: smooth;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .8rem 3rem;
+    color: white;
+    border: .2rem solid var(--seaGreen);
+    cursor: pointer;
+    font-size: 1.7rem;
+    background-color: var(--seaGreen);
+}
+
+.btn:hover{
+    background-color: var(--orgHover);
+    color: var(--seaGreen);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Styles for the popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: fit-content;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    max-height: 80vh; /* Set a maximum height for the popup */
+    overflow-y: auto; /* Enable vertical scrolling */
+
+}
+
+/* Style for the close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    margin-right: 0;
+    margin-left: auto;
+    font-size: 2rem;
+}
+
+.reviewer {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.image {
+    margin-right: 20px;
+}
+
+.reviewer .avatar {
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.reviewer  .btn{
+    width: 70px;
+}
+
+.reviewer div{
+    padding: 10px 10px 2px 10px;
+    font-size: 1.5rem;
+}
+
+ol {
+    list-style: none;
+    display: flex; /* Set the display property to flex */
+}
+
+body {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+ol {
+    list-style: none;
+    display: flex; /* Set the display property to flex */
+}
+
+.float-container {
+    overflow: auto;
+    
+    width: 100%;
+}
+
+.float-child {
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-article-masthead__info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    width: 50%;
+    
+}
+
+.breadcrumbs {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.c-breadcrumbs__item {
+    gap: 1px;
+    margin-right: 50px;
+}
+
+.c-masthead__container {
+    display: flex; /* Set the display property to flex */
+    justify-content: space-between; /* Align items with space in between */
+    align-items: center; /* Center items vertically */
+    padding: 10px; /* Add padding for spacing */
+}
+
+.app-article-masthead__buttons {
+    display: flex;
+    gap: 10px; /* Optional: Add gap between buttons */
+}
+
+.app-article-masthead__brand {
+    display: flex;
+    gap: 10px; /* Optional: Add gap between brand items */
+    width: 40%;
+    padding-left: 14%;
+}
+
+.app-article-masthead__journal-title{
+    padding: 20px;
+}
+
+.app-article-masthead__submission-link{
+    padding-left: 34%;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.app-article-masthead__journal-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items vertically */
+    padding-top: 20px;
+    font-size: 25px;
+    font-weight: bolder;
+}
+.c-article-title{
+    margin-top: 5%;
+    font-weight: 500px;
+    font-size: 45px;
+}
+.c-article-identifiers{
+    display: flex;
+    gap: 14px;
+    font-size: 19px;
+}
+.ul2{
+    margin-top: 30px;
+}
+
+.c-pdf-container {
+    margin-top: 45px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.required-reviewer-container{
+    margin-top: 45px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 1.2rem;
+}
+.required-reviewer{
+    background-color: yellow;
+    color: black;
+    border-radius: 20px;
+    padding: 15px;
+
+}
+.required-reviewer:hover {
+    background-color: #d3bf0a;
+}
+.c-pdf-download {
+    background-color: #fff;
+    color: black;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 1.5rem;
+}
+
+.c-pdf-download__link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.c-pdf-download__text {
+    margin-right: 6px;
+    margin-left: 10px;
+}
+
+/* Optional: Add hover effect */
+.c-pdf-download:hover {
+    background-color: #b31b00;
+    box-shadow: 5px 5px 2px lightblue;
+}
+.app{
+    margin-top: 55px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.c-masthead__container {
+    background-color: rgba(0, 255, 149, 0.151);
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, .1);
+    color: #333333e5;
+}
+.c-article-section__content{
+    width: 90%;
+    float: left;
+    box-sizing: border-box;
+    text-align: left;
+}
+.c-article__sub-heading{
+    padding-top: 40px;
+    padding-bottom: 15px;
+    font-size: 2.5vh;
+    font-weight: bolder;
+}
+.c-article-section__title{
+    padding-top: 40px;
+    margin-left: 55px;
+    padding-left: 45px;
+    text-align: left;
+    font-size: min(max(1.5rem,3vw),1.75rem);
+    font-weight: 700;
+    border-bottom: 1px solid #cedbe0;
+}
+
+/*Reviewer's comment form*/
+
+
+.container_com {
+    border-radius: 20px;
+    border: 1px solid #464545d0;
+    width: 100;
+    background-color: white;
+    margin: 20px auto;
+    padding: 30px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.container_com .btn{
+    background-color: #63ea75;
+
+}
+
+.container_com .title {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #63ea75;
+    text-transform: uppercase;
+}
+
+.container_com .form {
+    width: 100%;
+}
+
+.input_field {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column; /* Place items in a column */
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 20px;
+    margin-right: 90%;
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid #63ea75;
+    font-size: 15px;
+    margin-top: 10px;
+    padding-top: 10p;
+    padding-right: 12px;
+    margin-right: 12px;
+    border-radius: 3px;
+    transition: all 0.5s ease;
+    resize: none;
+    align-self: flex-start;
+}
+
+
+
+.container_comp {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.container_p {
+    float: left;
+    width: 75%;
+}
+
+
+p{
+    font-size: 15px;
+    color: #222;
+}
+.c-article-section__content p{
+    font-size: 16px;
+}
+nav li{
+    font-size: 17px;
+}
+center h2{
+    font-size: 14px;
+}
+
+
+.comment_section_list{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #333333e5;
+    padding: 10px;
+}
+
+.comment_section_list >*{
+    flex: 10% 90% 100%;
+}
+
+.comment_section_list img{
+    margin-top: 10px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.comment_section_list .name{
+    font-size: 1.8rem;
+}
+
+.comment_section_list .comment_text{
+    width: 300px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+}
+.comment_section_list .comment_text{
+    text-align: justify;
+}
+
+.comment_section_list .cmt_sts_btn{
+    width: 100%;
+   justify-content: center;
+    display: flex;
+}
+
+.comment_section_list .btn{
+   width: 80%;
+}
+
+
+.navbar a.active {
+    color: var(--blueBTN);
+    /* Add any additional styles for the active link */
+}
